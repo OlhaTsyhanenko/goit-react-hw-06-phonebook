@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import shortid from "shortid";
+import actions from "../../redux/actions";
 import styles from "./contactForm.module.css";
 
-export default function ContactForm({ onAddContact }) {
+ function ContactForm({onAddContact}) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -68,6 +70,12 @@ export default function ContactForm({ onAddContact }) {
   );
 }
 
-ContactForm.proppTypes = {
+ContactForm.propTypes = {
   onAddContact: PropTypes.func,
 }
+
+const mapDispatchToProps = dispatch => ({
+  onAddContact: (name, number) => dispatch(actions.addContact(name, number))
+});
+
+export default connect(null, mapDispatchToProps)(ContactForm);
