@@ -1,8 +1,4 @@
-import { useState } from "react";
-import { connect } from "react-redux";
 import "./App.css";
-import useLocalStorage from './components/LocalStorage';
-import shortid from "shortid";
 import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
 import Filter from "./components/Filter/Filter";

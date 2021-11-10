@@ -1,5 +1,5 @@
 import shortid from "shortid";
-import types from './types';
+import types from './contacts-types';
 
 const addContact = (name, number) => ({
     type: types.ADD,
